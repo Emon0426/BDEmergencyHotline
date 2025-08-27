@@ -68,8 +68,8 @@ for (const calls of callFunc) {
           <div  class="flex gap-1 justify-between items-center bg-[#F2F4F6] p-2 rounded-md  mb-2">
             
             <div class="">
-              <h2 class=" italic text-xs ">${value.name}</h2>
-              <p class="italic text-xs text-gray-500">${value.num}</p>
+              <h2 class=" inter font-semibold ">${value.name}</h2>
+              <p class="inter text-xs text-gray-500">${value.num}</p>
             </div>
             <p class="text-xs italic ">${value.date}</p>
           </div>
