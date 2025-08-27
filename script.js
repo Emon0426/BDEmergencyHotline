@@ -71,7 +71,7 @@ for (const calls of callFunc) {
               <h2 class=" inter font-semibold ">${value.name}</h2>
               <p class="inter text-xs text-gray-500">${value.num}</p>
             </div>
-            <p class="text-xs italic ">${value.date}</p>
+            <p class="text-xs inter ">${value.date}</p>
           </div>
 
         
