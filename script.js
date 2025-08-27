@@ -11,9 +11,9 @@ const copyIcons = document.querySelectorAll("i.fa-copy");
 copyIcons.forEach(function (icon) {
   const copyButton = icon.closest("button");
   copyButton.addEventListener("click", function () {
-    const parentCard = copyButton.closest("div");
+    const parentCard = copyButton.closest(".service-card");
     const allHeadings = parentCard.querySelectorAll("h2");
-    const number = allHeadings[1].innerText;
+    const number = parentCard.querySelector(".services-num").innerText;
     navigator.clipboard.writeText(number);
     alert("number copied : " + number);
     const copyNum = strToNum("copy-num");
@@ -37,18 +37,18 @@ const callData = [];
 const callFunc = document.getElementsByClassName("call");
 for (const calls of callFunc) {
   calls.addEventListener("click", function () {
-    const parentDiv = calls.closest("div");
+    const parentDiv = calls.closest(".service-card");
     const serviceName = parentDiv.querySelector(".services-name").innerText;
     const callServicesName = parentDiv.querySelector(".callServices").innerText;
     const serviceNum = parentDiv.querySelector(".services-num").innerText;
     const coinValue = strToNum("coins");
     if (coinValue < 20) {
       alert(
-        "  You don't have enough coins.You need at least 20 coins to make a call"
+        "❌You don't have enough coins.You need at least 20 coins to make a call"
       );
       return;
     }
-    alert(`calling ${serviceName} ${serviceNum}...`);
+    alert(`📞 calling ${serviceName} ${serviceNum}...`);
     const tottalCoin = coinValue - 20;
     document.getElementById("coins").innerText = tottalCoin;
 
@@ -65,13 +65,13 @@ for (const calls of callFunc) {
       const div = document.createElement("div");
       div.innerHTML = `
       
-          <div id='div' class="flex justify-between items-center px-3 mb-3">
+          <div  class="flex gap-1 justify-between items-center bg-[#F2F4F6] p-2 rounded-md  mb-2">
             
             <div class="">
-              <h2 class="font-bold text-[14px]">${value.name}</h2>
-              <p class="font-semibold text-xs text-gray-500">${value.num}</p>
+              <h2 class=" italic text-xs ">${value.name}</h2>
+              <p class="italic text-xs text-gray-500">${value.num}</p>
             </div>
-            <p class="text-xs">${value.date}</p>
+            <p class="text-xs italic ">${value.date}</p>
           </div>
 
         
